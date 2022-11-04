@@ -19,15 +19,23 @@ protocol SuperPayDashBoardPresentable: Presentable {
 protocol SuperPayDashBoardListener: AnyObject {
     // TODO: Declare methods the interactor can invoke to communicate with other RIBs.
 }
+// TIP: dependency 프로토콜 만드는 이유?
+// 여러 곳에서 이 디펜덴시를 쓰게됨 (수정이 필요한 경우 한번에 체크 가능) (컴파일 체크)
+protocol SuperPayDashboardInteractorDependency {
+    var balance: ReadOnlyCurrentValuePublisher<Double> { get }
+}
 
 final class SuperPayDashBoardInteractor: PresentableInteractor<SuperPayDashBoardPresentable>, SuperPayDashBoardInteractable, SuperPayDashBoardPresentableListener {
 
     weak var router: SuperPayDashBoardRouting?
     weak var listener: SuperPayDashBoardListener?
 
-    // TODO: Add additional dependencies to constructor. Do not perform any logic
-    // in constructor.
-    override init(presenter: SuperPayDashBoardPresentable) {
+    private let dependency: SuperPayDashboardInteractorDependency
+    init(
+        presenter: SuperPayDashBoardPresentable,
+        dependency: SuperPayDashboardInteractorDependency
+    ) {
+        self.dependency = dependency
         super.init(presenter: presenter)
         presenter.listener = self
     }

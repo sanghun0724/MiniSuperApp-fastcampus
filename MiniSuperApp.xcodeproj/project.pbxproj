@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B62D92DC2913E88900BD38D9 /* CombineExt in Frameworks */ = {isa = PBXBuildFile; productRef = B62D92DB2913E88900BD38D9 /* CombineExt */; };
+		B62D92DE2913E8BE00BD38D9 /* Combine+Utills.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62D92DD2913E8BE00BD38D9 /* Combine+Utills.swift */; };
 		DEBB4580290E4A3F00725798 /* SuperPayDashBoardRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBB457C290E4A3F00725798 /* SuperPayDashBoardRouter.swift */; };
 		DEBB4581290E4A3F00725798 /* SuperPayDashBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBB457D290E4A3F00725798 /* SuperPayDashBoardViewController.swift */; };
 		DEBB4582290E4A3F00725798 /* SuperPayDashBoardBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBB457E290E4A3F00725798 /* SuperPayDashBoardBuilder.swift */; };
@@ -51,6 +53,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B62D92DD2913E8BE00BD38D9 /* Combine+Utills.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Combine+Utills.swift"; sourceTree = "<group>"; };
 		DEBB457C290E4A3F00725798 /* SuperPayDashBoardRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperPayDashBoardRouter.swift; sourceTree = "<group>"; };
 		DEBB457D290E4A3F00725798 /* SuperPayDashBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperPayDashBoardViewController.swift; sourceTree = "<group>"; };
 		DEBB457E290E4A3F00725798 /* SuperPayDashBoardBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperPayDashBoardBuilder.swift; sourceTree = "<group>"; };
@@ -100,6 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B62D92DC2913E88900BD38D9 /* CombineExt in Frameworks */,
 				F5829F6E26DB2DE900BFA8CD /* ModernRIBs in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -165,6 +169,7 @@
 				F5EAA231270B3A8F00EF2B70 /* UIView+Utils.swift */,
 				F5EAA21F270B39DC00EF2B70 /* PushModalPresentationController.swift */,
 				F5EAA22F270B3A7100EF2B70 /* RIBs+Utils.swift */,
+				B62D92DD2913E8BE00BD38D9 /* Combine+Utills.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -269,6 +274,7 @@
 			name = MiniSuperApp;
 			packageProductDependencies = (
 				F5829F6D26DB2DE900BFA8CD /* ModernRIBs */,
+				B62D92DB2913E88900BD38D9 /* CombineExt */,
 			);
 			productName = SuperRedApp;
 			productReference = F5829F5526DB2BC400BFA8CD /* MiniSuperApp.app */;
@@ -299,6 +305,7 @@
 			mainGroup = F5829F4C26DB2BC400BFA8CD;
 			packageReferences = (
 				F5829F6C26DB2DE900BFA8CD /* XCRemoteSwiftPackageReference "ModernRIBs" */,
+				B62D92DA2913E88800BD38D9 /* XCRemoteSwiftPackageReference "CombineExt" */,
 			);
 			productRefGroup = F5829F5626DB2BC400BFA8CD /* Products */;
 			projectDirPath = "";
@@ -348,6 +355,7 @@
 				F5EAA22D270B3A4500EF2B70 /* RideTypeView.swift in Sources */,
 				F5EAA219270B395900EF2B70 /* HomeWidgetView.swift in Sources */,
 				F57F6AFE26DB4CD700C0117D /* RootTabBarController.swift in Sources */,
+				B62D92DE2913E8BE00BD38D9 /* Combine+Utills.swift in Sources */,
 				F57F6AEB26DB4A2700C0117D /* FinanceHomeInteractor.swift in Sources */,
 				DEBB4580290E4A3F00725798 /* SuperPayDashBoardRouter.swift in Sources */,
 				DEBB4581290E4A3F00725798 /* SuperPayDashBoardViewController.swift in Sources */,
@@ -557,6 +565,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		B62D92DA2913E88800BD38D9 /* XCRemoteSwiftPackageReference "CombineExt" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CombineCommunity/CombineExt";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		F5829F6C26DB2DE900BFA8CD /* XCRemoteSwiftPackageReference "ModernRIBs" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/DevYeom/ModernRIBs";
@@ -568,6 +584,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		B62D92DB2913E88900BD38D9 /* CombineExt */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B62D92DA2913E88800BD38D9 /* XCRemoteSwiftPackageReference "CombineExt" */;
+			productName = CombineExt;
+		};
 		F5829F6D26DB2DE900BFA8CD /* ModernRIBs */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F5829F6C26DB2DE900BFA8CD /* XCRemoteSwiftPackageReference "ModernRIBs" */;
