@@ -6,6 +6,17 @@ protocol FinanceHomeDependency: Dependency {
 }
 
 final class FinanceHomeComponent: Component<FinanceHomeDependency>, SuperPayDashBoardDependency {
+    var balance: ReadOnlyCurrentValuePublisher<Double> { balancePublisher }
+    /// 잔액을 업데이트 할때 쓰는 Publisher
+    private let balancePublisher: CurrentValuePublisher<Double>
+    
+    init(
+        dependency: FinanceHomeDependency,
+        balance: CurrentValuePublisher<Double>
+    ) {
+        self.balancePublisher = balance
+        super.init(dependency: dependency)
+    }
   
   // TODO: Declare 'fileprivate' dependencies that are only used by this RIB.
 }
@@ -23,7 +34,9 @@ final class FinanceHomeBuilder: Builder<FinanceHomeDependency>, FinanceHomeBuild
   }
   
   func build(withListener listener: FinanceHomeListener) -> FinanceHomeRouting {
-    let component = FinanceHomeComponent(dependency: dependency) // 자식 리블렛들이 필요한 것들도 담는 바구니..
+    let balanccePublisher = CurrentValuePublisher<Double>(10000)
+    let component = FinanceHomeComponent(dependency: dependency,
+                                           balance: balanccePublisher) // 자식 리블렛들이 필요한 것들도 담는 바구니..
     let viewController = FinanceHomeViewController()
     let interactor = FinanceHomeInteractor(presenter: viewController)
     interactor.listener = listener

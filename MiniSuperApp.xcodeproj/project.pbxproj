@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B62D92DC2913E88900BD38D9 /* CombineExt in Frameworks */ = {isa = PBXBuildFile; productRef = B62D92DB2913E88900BD38D9 /* CombineExt */; };
 		B62D92DE2913E8BE00BD38D9 /* Combine+Utills.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62D92DD2913E8BE00BD38D9 /* Combine+Utills.swift */; };
+		DE4927BB29163D590016A9F8 /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4927BA29163D590016A9F8 /* Formatter.swift */; };
 		DEBB4580290E4A3F00725798 /* SuperPayDashBoardRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBB457C290E4A3F00725798 /* SuperPayDashBoardRouter.swift */; };
 		DEBB4581290E4A3F00725798 /* SuperPayDashBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBB457D290E4A3F00725798 /* SuperPayDashBoardViewController.swift */; };
 		DEBB4582290E4A3F00725798 /* SuperPayDashBoardBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBB457E290E4A3F00725798 /* SuperPayDashBoardBuilder.swift */; };
@@ -54,6 +55,7 @@
 
 /* Begin PBXFileReference section */
 		B62D92DD2913E8BE00BD38D9 /* Combine+Utills.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Combine+Utills.swift"; sourceTree = "<group>"; };
+		DE4927BA29163D590016A9F8 /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
 		DEBB457C290E4A3F00725798 /* SuperPayDashBoardRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperPayDashBoardRouter.swift; sourceTree = "<group>"; };
 		DEBB457D290E4A3F00725798 /* SuperPayDashBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperPayDashBoardViewController.swift; sourceTree = "<group>"; };
 		DEBB457E290E4A3F00725798 /* SuperPayDashBoardBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperPayDashBoardBuilder.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				DEBB457D290E4A3F00725798 /* SuperPayDashBoardViewController.swift */,
 				DEBB457E290E4A3F00725798 /* SuperPayDashBoardBuilder.swift */,
 				DEBB457F290E4A3F00725798 /* SuperPayDashBoardInteractor.swift */,
+				DE4927BA29163D590016A9F8 /* Formatter.swift */,
 			);
 			path = SuperPayDashBoard;
 			sourceTree = "<group>";
@@ -355,6 +358,7 @@
 				F5EAA22D270B3A4500EF2B70 /* RideTypeView.swift in Sources */,
 				F5EAA219270B395900EF2B70 /* HomeWidgetView.swift in Sources */,
 				F57F6AFE26DB4CD700C0117D /* RootTabBarController.swift in Sources */,
+				DE4927BB29163D590016A9F8 /* Formatter.swift in Sources */,
 				B62D92DE2913E8BE00BD38D9 /* Combine+Utills.swift in Sources */,
 				F57F6AEB26DB4A2700C0117D /* FinanceHomeInteractor.swift in Sources */,
 				DEBB4580290E4A3F00725798 /* SuperPayDashBoardRouter.swift in Sources */,

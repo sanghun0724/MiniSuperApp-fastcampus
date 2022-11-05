@@ -6,6 +6,7 @@
 //
 
 import ModernRIBs
+import Foundation
 
 protocol SuperPayDashBoardDependency: Dependency {
     var balance: ReadOnlyCurrentValuePublisher<Double> { get }
@@ -16,7 +17,7 @@ protocol SuperPayDashBoardDependency: Dependency {
 // 2. 밑의 빌드함수에서 새로만듬
 final class SuperPayDashBoardComponent: Component<SuperPayDashBoardDependency>, SuperPayDashboardInteractorDependency {
     var balance: ReadOnlyCurrentValuePublisher<Double> { dependency.balance }
-    // TODO: Declare 'fileprivate' dependencies that are only used by this RIB.
+    var balanceFormatter: NumberFormatter { Formatter.balanceFormatter }
 }
 
 // MARK: - Builder
@@ -26,7 +27,7 @@ protocol SuperPayDashBoardBuildable: Buildable {
 }
 
 final class SuperPayDashBoardBuilder: Builder<SuperPayDashBoardDependency>, SuperPayDashBoardBuildable {
-
+    
     override init(dependency: SuperPayDashBoardDependency) {
         super.init(dependency: dependency)
     }
