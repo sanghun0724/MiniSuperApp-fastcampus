@@ -4,17 +4,23 @@ protocol FinanceHomeDependency: Dependency {
   // TODO: Declare the set of dependencies required by this RIB, but cannot be
   // created by this RIB.
 }
-
-final class FinanceHomeComponent: Component<FinanceHomeDependency>, SuperPayDashBoardDependency {
+// TIP: 부모로부터 자식한테 데이터를 줄때에는 스트림을 이용함
+// WHY? -> 리블렛은 여러 자식 리블렛을 가질 수 있음 -> 1: n 관계 -> 스트림 바인딩 구독 유용
+// +) 반대로 자식은 부모를 하나밖에 못가지기 떄문에 -> 1:1 관계 -> delegate 사용 유용
+final class FinanceHomeComponent: Component<FinanceHomeDependency>, SuperPayDashBoardDependency, CardOnFileDashboardDependency {
+    var cardsOnFileRepository: CardOnfileRepository
+    
     var balance: ReadOnlyCurrentValuePublisher<Double> { balancePublisher }
     /// 잔액을 업데이트 할때 쓰는 Publisher
     private let balancePublisher: CurrentValuePublisher<Double>
     
     init(
         dependency: FinanceHomeDependency,
-        balance: CurrentValuePublisher<Double>
+        balance: CurrentValuePublisher<Double>,
+        cardOnfileRepository: CardOnfileRepository
     ) {
         self.balancePublisher = balance
+        self.cardsOnFileRepository = cardOnfileRepository
         super.init(dependency: dependency)
     }
   
@@ -35,16 +41,20 @@ final class FinanceHomeBuilder: Builder<FinanceHomeDependency>, FinanceHomeBuild
   
   func build(withListener listener: FinanceHomeListener) -> FinanceHomeRouting {
     let balanccePublisher = CurrentValuePublisher<Double>(10000)
+      
     let component = FinanceHomeComponent(dependency: dependency,
-                                           balance: balanccePublisher) // 자식 리블렛들이 필요한 것들도 담는 바구니..
+                                           balance: balanccePublisher,
+                                          cardOnfileRepository: CardOnfileRepositoryImp()) // 자식 리블렛들이 필요한 것들도 담는 바구니..
     let viewController = FinanceHomeViewController()
     let interactor = FinanceHomeInteractor(presenter: viewController)
     interactor.listener = listener
       
     let superPayDashBoardBuilder = SuperPayDashBoardBuilder(dependency: component)
+    let cardOnFileDashboardBuilder = CardOnFileDashboardBuilder(dependency: component)
       
       return FinanceHomeRouter(interactor: interactor,
                                viewController: viewController,
-                               superPayDashboardBuildable: superPayDashBoardBuilder)
+                               superPayDashboardBuildable: superPayDashBoardBuilder,
+                               cardOnFileDatshboardBuildable: cardOnFileDashboardBuilder)
   }
 }
