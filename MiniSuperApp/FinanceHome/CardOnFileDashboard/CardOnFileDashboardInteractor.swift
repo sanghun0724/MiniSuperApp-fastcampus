@@ -19,11 +19,11 @@ protocol CardOnFileDashboardPresentable: Presentable {
 }
 
 protocol CardOnFileDashboardListener: AnyObject {
-    // TODO: Declare methods the interactor can invoke to communicate with other RIBs.
+    func cardOnFileDashboardDidTapAddPaymentMethod()
 }
 
 protocol CardOnFileDashboardInteractorDependency {
-    var cardsOnFileRespository: CardOnfileRepository { get }
+    var cardsOnFileRepository: CardOnfileRepository { get }
 }
 
 final class CardOnFileDashboardInteractor: PresentableInteractor<CardOnFileDashboardPresentable>, CardOnFileDashboardInteractable, CardOnFileDashboardPresentableListener {
@@ -47,8 +47,8 @@ final class CardOnFileDashboardInteractor: PresentableInteractor<CardOnFileDashb
 
     override func didBecomeActive() {
         super.didBecomeActive()
-        dependency.cardsOnFileRespository.cardOnfile.sink { methods in
-            let viewModels = methods.prefix(5).map(PaymentMethodViewModel.init)
+        dependency.cardsOnFileRepository.cardOnfile.sink { methods in
+            let viewModels = methods.prefix(3).map(PaymentMethodViewModel.init)
             self.presenter.update(with: viewModels)
         }.store(in: &cancellables)
     }
@@ -58,5 +58,12 @@ final class CardOnFileDashboardInteractor: PresentableInteractor<CardOnFileDashb
        
         cancellables.forEach { $0.cancel() }
         cancellables.removeAll()
+    }
+    
+    // interactor은 vc -> 리스너에게 받은 func를 구현
+    // 리블렛 끼리의 통신은 interactor(두뇌끼리)
+    // 부모(finance)에게 모달 띄우도록
+    func didTapAddPaymentMethod() {
+        listener?.cardOnFileDashboardDidTapAddPaymentMethod()
     }
 }
