@@ -12,7 +12,7 @@ protocol CardOnFileDashboardDependency: Dependency {
 }
 
 final class CardOnFileDashboardComponent: Component<CardOnFileDashboardDependency>, CardOnFileDashboardInteractorDependency {
-    var cardsOnFileRepository: CardOnfileRepository { dependency.cardsOnFileRepository}
+    var cardsOnFileRepository: CardOnfileRepository { dependency.cardsOnFileRepository }
 
     // TODO: Declare 'fileprivate' dependencies that are only used by this RIB.
 }

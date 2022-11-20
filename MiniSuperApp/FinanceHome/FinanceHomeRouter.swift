@@ -1,6 +1,6 @@
 import ModernRIBs
 
-protocol FinanceHomeInteractable: Interactable, SuperPayDashBoardListener, CardOnFileDashboardListener, AddPaymentMethodListener {
+protocol FinanceHomeInteractable: Interactable, SuperPayDashBoardListener, CardOnFileDashboardListener, AddPaymentMethodListener, TopupListener {
     var router: FinanceHomeRouting? { get set }
     var listener: FinanceHomeListener? { get set }
     var presentationDelegateProxy: AdaptivePresentationControllerDelegateProxy { get }
@@ -21,16 +21,21 @@ final class FinanceHomeRouter: ViewableRouter<FinanceHomeInteractable, FinanceHo
     private let addPaymentMethodBuildable: AddPaymentMethodBuildable
     private var addPaymentMethodRouting: Routing?
     
+    private let topupBuildable: TopupBuildable
+    private var topupRouting: Routing?
+    
     // TODO: Constructor inject child builder protocols to allow building children.
     init(interactor: FinanceHomeInteractable,
                   viewController: FinanceHomeViewControllable,
                   superPayDashboardBuildable: SuperPayDashBoardBuildable,
          cardOnFileDatshboardBuildable: CardOnFileDashboardBuildable,
-         addPaymentMethodBuildable: AddPaymentMethodBuildable
+         addPaymentMethodBuildable: AddPaymentMethodBuildable,
+         topupBuildable: TopupBuildable
     ) {
         self.addPaymentMethodBuildable = addPaymentMethodBuildable
         self.superPayDashboardBuildable = superPayDashboardBuildable
         self.cardOnfileDashboardBuildable = cardOnFileDatshboardBuildable
+        self.topupBuildable = topupBuildable
         super.init(interactor: interactor, viewController: viewController)
         interactor.router = self
     }
@@ -87,5 +92,19 @@ final class FinanceHomeRouter: ViewableRouter<FinanceHomeInteractable, FinanceHo
         addPaymentMethodRouting = nil
         // routing을 nil로
         // 캔설 버튼을 누르거나 , 드래그로 화면을 내리거나
+    }
+    
+    func attatchTopup() {
+        if topupRouting != nil {
+            return
+        }
+        
+        let router = topupBuildable.build(withListener: interactor)
+        topupRouting = router
+        
+    }
+    
+    func detachTopup() {
+        
     }
 }
