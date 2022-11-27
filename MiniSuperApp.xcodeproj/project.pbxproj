@@ -32,6 +32,13 @@
 		DEBB4581290E4A3F00725798 /* SuperPayDashBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBB457D290E4A3F00725798 /* SuperPayDashBoardViewController.swift */; };
 		DEBB4582290E4A3F00725798 /* SuperPayDashBoardBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBB457E290E4A3F00725798 /* SuperPayDashBoardBuilder.swift */; };
 		DEBB4583290E4A3F00725798 /* SuperPayDashBoardInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBB457F290E4A3F00725798 /* SuperPayDashBoardInteractor.swift */; };
+		DED51A0929334A8A00EE4974 /* EnterAmountRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED51A0529334A8A00EE4974 /* EnterAmountRouter.swift */; };
+		DED51A0B29334A8A00EE4974 /* EnterAmountBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED51A0729334A8A00EE4974 /* EnterAmountBuilder.swift */; };
+		DED51A0C29334A8A00EE4974 /* EnterAmountInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED51A0829334A8A00EE4974 /* EnterAmountInteractor.swift */; };
+		DED51A1029334D2C00EE4974 /* EnterAmountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED51A0D29334D2C00EE4974 /* EnterAmountViewController.swift */; };
+		DED51A1129334D2C00EE4974 /* EnterAmountWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED51A0E29334D2C00EE4974 /* EnterAmountWidget.swift */; };
+		DED51A1229334D2C00EE4974 /* SelectedPaymentMethodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED51A0F29334D2C00EE4974 /* SelectedPaymentMethodView.swift */; };
+		DED51A1429334DE800EE4974 /* UIViewController+Utills.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED51A1329334DE800EE4974 /* UIViewController+Utills.swift */; };
 		F57EBE542738468700FE9319 /* UIImage+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57EBE512738468700FE9319 /* UIImage+Utils.swift */; };
 		F57EBE552738468700FE9319 /* Array+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57EBE522738468700FE9319 /* Array+Utils.swift */; };
 		F57EBE562738468700FE9319 /* UITableView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57EBE532738468700FE9319 /* UITableView+Utils.swift */; };
@@ -96,6 +103,13 @@
 		DEBB457D290E4A3F00725798 /* SuperPayDashBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperPayDashBoardViewController.swift; sourceTree = "<group>"; };
 		DEBB457E290E4A3F00725798 /* SuperPayDashBoardBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperPayDashBoardBuilder.swift; sourceTree = "<group>"; };
 		DEBB457F290E4A3F00725798 /* SuperPayDashBoardInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperPayDashBoardInteractor.swift; sourceTree = "<group>"; };
+		DED51A0529334A8A00EE4974 /* EnterAmountRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterAmountRouter.swift; sourceTree = "<group>"; };
+		DED51A0729334A8A00EE4974 /* EnterAmountBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterAmountBuilder.swift; sourceTree = "<group>"; };
+		DED51A0829334A8A00EE4974 /* EnterAmountInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterAmountInteractor.swift; sourceTree = "<group>"; };
+		DED51A0D29334D2C00EE4974 /* EnterAmountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EnterAmountViewController.swift; path = Samples/Topup/EnterAmountViewController.swift; sourceTree = SOURCE_ROOT; };
+		DED51A0E29334D2C00EE4974 /* EnterAmountWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EnterAmountWidget.swift; path = Samples/Topup/Views/EnterAmountWidget.swift; sourceTree = SOURCE_ROOT; };
+		DED51A0F29334D2C00EE4974 /* SelectedPaymentMethodView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SelectedPaymentMethodView.swift; path = Samples/Topup/Views/SelectedPaymentMethodView.swift; sourceTree = SOURCE_ROOT; };
+		DED51A1329334DE800EE4974 /* UIViewController+Utills.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utills.swift"; sourceTree = "<group>"; };
 		F57EBE512738468700FE9319 /* UIImage+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Utils.swift"; sourceTree = "<group>"; };
 		F57EBE522738468700FE9319 /* Array+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Utils.swift"; sourceTree = "<group>"; };
 		F57EBE532738468700FE9319 /* UITableView+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Utils.swift"; sourceTree = "<group>"; };
@@ -163,6 +177,7 @@
 		B69CC05E29287DFC006F4E17 /* Topup */ = {
 			isa = PBXGroup;
 			children = (
+				DED51A0429334A6E00EE4974 /* EnterAmount */,
 				B69CC05F29287E27006F4E17 /* TopupRouter.swift */,
 				B69CC06029287E27006F4E17 /* TopupBuilder.swift */,
 				B69CC06129287E27006F4E17 /* TopupInteractor.swift */,
@@ -211,6 +226,19 @@
 				DE4927BA29163D590016A9F8 /* Formatter.swift */,
 			);
 			path = SuperPayDashBoard;
+			sourceTree = "<group>";
+		};
+		DED51A0429334A6E00EE4974 /* EnterAmount */ = {
+			isa = PBXGroup;
+			children = (
+				DED51A0D29334D2C00EE4974 /* EnterAmountViewController.swift */,
+				DED51A0E29334D2C00EE4974 /* EnterAmountWidget.swift */,
+				DED51A0F29334D2C00EE4974 /* SelectedPaymentMethodView.swift */,
+				DED51A0529334A8A00EE4974 /* EnterAmountRouter.swift */,
+				DED51A0729334A8A00EE4974 /* EnterAmountBuilder.swift */,
+				DED51A0829334A8A00EE4974 /* EnterAmountInteractor.swift */,
+			);
+			path = EnterAmount;
 			sourceTree = "<group>";
 		};
 		F57F6AD926DB49E500C0117D /* AppHome */ = {
@@ -267,6 +295,7 @@
 				F5EAA22F270B3A7100EF2B70 /* RIBs+Utils.swift */,
 				B62D92DD2913E8BE00BD38D9 /* Combine+Utills.swift */,
 				B6132B792920C2D0008B8E47 /* AdaptivePresentationControllerDelegate.swift */,
+				DED51A1329334DE800EE4974 /* UIViewController+Utills.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -430,6 +459,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DED51A1229334D2C00EE4974 /* SelectedPaymentMethodView.swift in Sources */,
 				F5EAA229270B3A4500EF2B70 /* TransportHomeViewController.swift in Sources */,
 				F57F6AF226DB4A2D00C0117D /* ProfileHomeBuilder.swift in Sources */,
 				F5EAA22A270B3A4500EF2B70 /* TransportHomeRouter.swift in Sources */,
@@ -438,9 +468,11 @@
 				F5EAA22E270B3A4500EF2B70 /* SuperPayView.swift in Sources */,
 				B6132B7A2920C2D0008B8E47 /* AdaptivePresentationControllerDelegate.swift in Sources */,
 				F5EAA220270B39DC00EF2B70 /* PushModalPresentationController.swift in Sources */,
+				DED51A1129334D2C00EE4974 /* EnterAmountWidget.swift in Sources */,
 				DE4927CF291788660016A9F8 /* AddPaymentMethodButton.swift in Sources */,
 				B69CC06429287E27006F4E17 /* TopupInteractor.swift in Sources */,
 				DE4927D129178F740016A9F8 /* PaymentMethodView.swift in Sources */,
+				DED51A0C29334A8A00EE4974 /* EnterAmountInteractor.swift in Sources */,
 				F57F6AF126DB4A2D00C0117D /* ProfileHomeViewController.swift in Sources */,
 				DE4927CA2916430E0016A9F8 /* CardOnFileDashboardViewController.swift in Sources */,
 				F57F6AF326DB4A2D00C0117D /* ProfileHomeInteractor.swift in Sources */,
@@ -465,7 +497,10 @@
 				DE4927BB29163D590016A9F8 /* Formatter.swift in Sources */,
 				B62D92DE2913E8BE00BD38D9 /* Combine+Utills.swift in Sources */,
 				B62D9304291F6AB600BD38D9 /* AddPaymentMethodRouter.swift in Sources */,
+				DED51A0B29334A8A00EE4974 /* EnterAmountBuilder.swift in Sources */,
 				F57F6AEB26DB4A2700C0117D /* FinanceHomeInteractor.swift in Sources */,
+				DED51A1429334DE800EE4974 /* UIViewController+Utills.swift in Sources */,
+				DED51A0929334A8A00EE4974 /* EnterAmountRouter.swift in Sources */,
 				DEBB4580290E4A3F00725798 /* SuperPayDashBoardRouter.swift in Sources */,
 				DE4927CC2916430E0016A9F8 /* CardOnFileDashboardInteractor.swift in Sources */,
 				DEBB4581290E4A3F00725798 /* SuperPayDashBoardViewController.swift in Sources */,
@@ -483,6 +518,7 @@
 				DEBB4583290E4A3F00725798 /* SuperPayDashBoardInteractor.swift in Sources */,
 				F57F6AF026DB4A2D00C0117D /* ProfileHomeRouter.swift in Sources */,
 				F57EBE562738468700FE9319 /* UITableView+Utils.swift in Sources */,
+				DED51A1029334D2C00EE4974 /* EnterAmountViewController.swift in Sources */,
 				F57EBE552738468700FE9319 /* Array+Utils.swift in Sources */,
 				F5829F7426DB34AA00BFA8CD /* AppRootRouter.swift in Sources */,
 				DE4927CB2916430E0016A9F8 /* CardOnFileDashboardBuilder.swift in Sources */,

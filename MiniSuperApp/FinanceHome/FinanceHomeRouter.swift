@@ -101,10 +101,16 @@ final class FinanceHomeRouter: ViewableRouter<FinanceHomeInteractable, FinanceHo
         
         let router = topupBuildable.build(withListener: interactor)
         topupRouting = router
+        attachChild(router)
         
     }
     
     func detachTopup() {
+        guard let router = topupRouting else {
+            return
+        }
         
+        detachChild(router)
+        self.topupRouting = nil
     }
 }
