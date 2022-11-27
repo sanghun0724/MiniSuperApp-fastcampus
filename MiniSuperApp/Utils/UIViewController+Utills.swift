@@ -9,7 +9,7 @@ import UIKit
 
 extension UIViewController {
     
-    func setupNavigationItem(target: Any?, action: SElector?) {
+    func setupNavigationItem(target: Any?, action: Selector?) {
         navigationItem.leftBarButtonItem = UIBarButtonItem(
             image: UIImage(systemName: "xmark",
                            withConfiguration: UIImage.SymbolConfiguration(pointSize: 18, weight: .semibold)),

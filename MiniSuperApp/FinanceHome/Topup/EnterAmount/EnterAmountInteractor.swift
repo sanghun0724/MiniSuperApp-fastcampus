@@ -17,11 +17,11 @@ protocol EnterAmountPresentable: Presentable {
 }
 
 protocol EnterAmountListener: AnyObject {
-    // TODO: Declare methods the interactor can invoke to communicate with other RIBs.
+    
 }
 
 final class EnterAmountInteractor: PresentableInteractor<EnterAmountPresentable>, EnterAmountInteractable, EnterAmountPresentableListener {
-
+    
     weak var router: EnterAmountRouting?
     weak var listener: EnterAmountListener?
 
@@ -40,5 +40,17 @@ final class EnterAmountInteractor: PresentableInteractor<EnterAmountPresentable>
     override func willResignActive() {
         super.willResignActive()
         // TODO: Pause any business logic.
+    }
+    
+    func didTapClose() {
+        
+    }
+    
+    func didTapPaymentMethod() {
+        
+    }
+    
+    func didTapTopup(with amount: Double) {
+        
     }
 }
