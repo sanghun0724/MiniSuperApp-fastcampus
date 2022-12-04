@@ -9,7 +9,7 @@ import ModernRIBs
 // 뷰가 있는 리블렛의 경우 -> 부모에게 "나 끝났다" close 알려주면 dismiss 하는 역할은 부모의 역할
 // 뷰가 없는 뷰레스 리블렛의 경우(topup) -> 부모가 직접 프리젠트 한경우가 없기때문에 디스미스 하지 않음 뷰레스는 지가 다해야함 지가 열고 지가 닫아야함(ex) cleanupViews())
 
-protocol TopupInteractable: Interactable, AddPaymentMethodListener, EnterAmountListener {
+protocol TopupInteractable: Interactable, AddPaymentMethodListener, EnterAmountListener, CardOnFileListener {
     var router: TopupRouting? { get set }
     var listener: TopupListener? { get set }
     var presentationDelegateProxy: AdaptivePresentationControllerDelegateProxy { get }
@@ -31,15 +31,20 @@ final class TopupRouter: Router<TopupInteractable>, TopupRouting {
     private let enterAmountBuildable: EnterAmountBuildable
     private var enterAmountRouting: Routing?
     
+    private let cardOnFileBildable: CardOnFileBuildable
+    private var cardOnFileRouting: Routing?
+    
     init(
         interactor: TopupInteractable,
         viewController: ViewControllable,
         addPaymentMethodBuildable: AddPaymentMethodBuildable,
-        enterAmountBuildable: EnterAmountBuildable
+        enterAmountBuildable: EnterAmountBuildable,
+        cardOnFileBuildable: CardOnFileBuildable
     ) {
         self.viewController = viewController
         self.addPaymentMethodBuildable = addPaymentMethodBuildable
         self.enterAmountBuildable = enterAmountBuildable
+        self.cardOnFileBildable = cardOnFileBuildable
         super.init(interactor: interactor)
         interactor.router = self
     }
@@ -93,7 +98,27 @@ final class TopupRouter: Router<TopupInteractable>, TopupRouting {
         enterAmountRouting = nil
     }
     
-
+    func attachCardOnFile(paymentMethods: [PaymentMethod]) {
+        if cardOnFileRouting != nil {
+            return
+        }
+        
+        let router = cardOnFileBildable.build(withListener: interactor, paymentMethods: paymentMethods)
+        navigationControllable?.pushViewController(router.viewControllable, animated: true)
+        cardOnFileRouting = router
+        attachChild(router)
+    }
+    
+    func detachCardOnFile() {
+        guard let router = cardOnFileRouting else {
+            return
+        }
+        
+        navigationControllable?.popViewController(animated: true)
+        detachChild(router)
+        cardOnFileRouting = nil
+    }
+    
     private func presentInsideNavigation(_ viewcontrollable: ViewControllable) {
         let navigation  = NavigationControllerable(root: viewcontrollable)
         navigation.navigationController.presentationController?.delegate = interactor.presentationDelegateProxy
