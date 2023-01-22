@@ -6,6 +6,15 @@ protocol FinanceHomeDependency: Dependency {
 }
 
 final class FinanceHomeComponent: Component<FinanceHomeDependency>, SuperPayDashBoardDependency {
+    var balance: ReadOnlyCurrentValuePublisher<Double>
+    
+    init(
+        dependency: Dependency,
+        balance: ReadOnlyCurrentValuePublisher<Double>
+    ) {
+        self.balance = balance
+        super.dependency = dependency
+    }
   
   // TODO: Declare 'fileprivate' dependencies that are only used by this RIB.
 }
