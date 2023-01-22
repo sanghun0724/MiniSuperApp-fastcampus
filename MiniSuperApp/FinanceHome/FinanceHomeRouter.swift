@@ -12,6 +12,7 @@ protocol FinanceHomeViewControllable: ViewControllable {
 final class FinanceHomeRouter: ViewableRouter<FinanceHomeInteractable, FinanceHomeViewControllable>, FinanceHomeRouting {
     
     private var superPayDashBoardBuilder: SuperPayDashBoardBuilder
+    private var superPayRouting: SuperPayDashBoardRouting?
     
     // TODO: Constructor inject child builder protocols to allow building children.
     init(interactor: FinanceHomeInteractable, viewController: FinanceHomeViewControllable, superPayDashBoardBuilder: SuperPayDashBoardBuilder) {
@@ -21,9 +22,15 @@ final class FinanceHomeRouter: ViewableRouter<FinanceHomeInteractable, FinanceHo
     }
     
     func attachSuperPayDashBoard() {
+        if superPayRouting != nil {
+            return
+        }
         let router = superPayDashBoardBuilder.build(withListener: interactor)
         
         let dashBoard = router.viewControllable
         viewController.addDashBoard(view: dashBoard)
+        
+        self.superPayRouting = router
+        attachChild(router)
     }
 }
