@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		B6BACBC0297D0D4D0079254A /* Combine+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BACBBF297D0D4D0079254A /* Combine+Utils.swift */; };
 		B6BACBC3297D1DA70079254A /* CombineExt in Frameworks */ = {isa = PBXBuildFile; productRef = B6BACBC2297D1DA70079254A /* CombineExt */; };
+		B6BACBC9297D1E030079254A /* SuperPayDashBoardRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BACBC5297D1E030079254A /* SuperPayDashBoardRouter.swift */; };
+		B6BACBCA297D1E030079254A /* SuperPayDashBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BACBC6297D1E030079254A /* SuperPayDashBoardViewController.swift */; };
+		B6BACBCB297D1E030079254A /* SuperPayDashBoardBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BACBC7297D1E030079254A /* SuperPayDashBoardBuilder.swift */; };
+		B6BACBCC297D1E030079254A /* SuperPayDashBoardInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BACBC8297D1E030079254A /* SuperPayDashBoardInteractor.swift */; };
 		F57EBE542738468700FE9319 /* UIImage+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57EBE512738468700FE9319 /* UIImage+Utils.swift */; };
 		F57EBE552738468700FE9319 /* Array+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57EBE522738468700FE9319 /* Array+Utils.swift */; };
 		F57EBE562738468700FE9319 /* UITableView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57EBE532738468700FE9319 /* UITableView+Utils.swift */; };
@@ -50,6 +54,10 @@
 
 /* Begin PBXFileReference section */
 		B6BACBBF297D0D4D0079254A /* Combine+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Combine+Utils.swift"; sourceTree = "<group>"; };
+		B6BACBC5297D1E030079254A /* SuperPayDashBoardRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperPayDashBoardRouter.swift; sourceTree = "<group>"; };
+		B6BACBC6297D1E030079254A /* SuperPayDashBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperPayDashBoardViewController.swift; sourceTree = "<group>"; };
+		B6BACBC7297D1E030079254A /* SuperPayDashBoardBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperPayDashBoardBuilder.swift; sourceTree = "<group>"; };
+		B6BACBC8297D1E030079254A /* SuperPayDashBoardInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperPayDashBoardInteractor.swift; sourceTree = "<group>"; };
 		F57EBE512738468700FE9319 /* UIImage+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Utils.swift"; sourceTree = "<group>"; };
 		F57EBE522738468700FE9319 /* Array+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Utils.swift"; sourceTree = "<group>"; };
 		F57EBE532738468700FE9319 /* UITableView+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Utils.swift"; sourceTree = "<group>"; };
@@ -103,6 +111,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B6BACBC4297D1DEE0079254A /* SuperPayDashBoard */ = {
+			isa = PBXGroup;
+			children = (
+				B6BACBC5297D1E030079254A /* SuperPayDashBoardRouter.swift */,
+				B6BACBC6297D1E030079254A /* SuperPayDashBoardViewController.swift */,
+				B6BACBC7297D1E030079254A /* SuperPayDashBoardBuilder.swift */,
+				B6BACBC8297D1E030079254A /* SuperPayDashBoardInteractor.swift */,
+			);
+			path = SuperPayDashBoard;
+			sourceTree = "<group>";
+		};
 		F57F6AD926DB49E500C0117D /* AppHome */ = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +138,7 @@
 		F57F6ADA26DB49EA00C0117D /* FinanceHome */ = {
 			isa = PBXGroup;
 			children = (
+				B6BACBC4297D1DEE0079254A /* SuperPayDashBoard */,
 				F57F6AE426DB4A2700C0117D /* FinanceHomeRouter.swift */,
 				F57F6AE526DB4A2700C0117D /* FinanceHomeViewController.swift */,
 				F57F6AE626DB4A2700C0117D /* FinanceHomeBuilder.swift */,
@@ -323,10 +343,12 @@
 				F57F6AF126DB4A2D00C0117D /* ProfileHomeViewController.swift in Sources */,
 				F57F6AF326DB4A2D00C0117D /* ProfileHomeInteractor.swift in Sources */,
 				F5829F7626DB34AA00BFA8CD /* AppRootBuilder.swift in Sources */,
+				B6BACBC9297D1E030079254A /* SuperPayDashBoardRouter.swift in Sources */,
 				F5EAA230270B3A7100EF2B70 /* RIBs+Utils.swift in Sources */,
 				F57EBE542738468700FE9319 /* UIImage+Utils.swift in Sources */,
 				F5EAA22B270B3A4500EF2B70 /* TransportHomeBuilder.swift in Sources */,
 				F5EAA21D270B395900EF2B70 /* HomeWidgetModel.swift in Sources */,
+				B6BACBCC297D1E030079254A /* SuperPayDashBoardInteractor.swift in Sources */,
 				F5EAA21E270B395900EF2B70 /* AppHomeRouter.swift in Sources */,
 				F5EAA21A270B395900EF2B70 /* AppHomeBuilder.swift in Sources */,
 				F5EAA234270B3A9A00EF2B70 /* UIColor+Utils.swift in Sources */,
@@ -335,6 +357,7 @@
 				F5EAA22D270B3A4500EF2B70 /* RideTypeView.swift in Sources */,
 				F5EAA219270B395900EF2B70 /* HomeWidgetView.swift in Sources */,
 				F57F6AFE26DB4CD700C0117D /* RootTabBarController.swift in Sources */,
+				B6BACBCA297D1E030079254A /* SuperPayDashBoardViewController.swift in Sources */,
 				F57F6AEB26DB4A2700C0117D /* FinanceHomeInteractor.swift in Sources */,
 				F5EAA21B270B395900EF2B70 /* AppHomeInteractor.swift in Sources */,
 				F57F6AE826DB4A2700C0117D /* FinanceHomeRouter.swift in Sources */,
@@ -348,6 +371,7 @@
 				F57EBE562738468700FE9319 /* UITableView+Utils.swift in Sources */,
 				F57EBE552738468700FE9319 /* Array+Utils.swift in Sources */,
 				F5829F7426DB34AA00BFA8CD /* AppRootRouter.swift in Sources */,
+				B6BACBCB297D1E030079254A /* SuperPayDashBoardBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
