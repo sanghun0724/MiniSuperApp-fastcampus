@@ -38,7 +38,7 @@ final class SuperPayDashBoardViewController: UIViewController, SuperPayDashBoard
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("충전하기", for: .normal)
         button.setTitleColor(.systemBlue, for: .normal)
-        button.addTarget(self, action: #selector(touchButtonDidTap), for: .touchUpInside)
+       // button.addTarget(self, action: #selector(touchButtonDidTap), for: .touchUpInside)
         return button
     }()
     
@@ -119,12 +119,12 @@ final class SuperPayDashBoardViewController: UIViewController, SuperPayDashBoard
         ])
     }
     
-    func updateBalance(_ balance: String) {
-        balanceAmountLabel.text = balance
-    }
-    
-    @objc
-    private func touchButtonDidTap() {
-        listener?.topupButtonDidTap()
-    }
+//    func updateBalance(_ balance: String) {
+//        balanceAmountLabel.text = balance
+//    }
+//
+//    @objc
+//    private func touchButtonDidTap() {
+//        listener?.topupButtonDidTap()
+//    }
 }
