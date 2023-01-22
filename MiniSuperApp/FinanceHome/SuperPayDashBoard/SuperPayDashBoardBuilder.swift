@@ -10,7 +10,7 @@ import ModernRIBs
 protocol SuperPayDashBoardDependency: Dependency {
     // TODO: Declare the set of dependencies required by this RIB, but cannot be
     // created by this RIB.
-    var balance: ReadOnlyCurrentValuePublisher<Double>
+    var balance: ReadOnlyCurrentValuePublisher<Double> { get }
 }
 
 final class SuperPayDashBoardComponent: Component<SuperPayDashBoardDependency>, SuperPayDashBoardInteractorDependency {
