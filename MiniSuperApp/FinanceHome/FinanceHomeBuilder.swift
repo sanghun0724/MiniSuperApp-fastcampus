@@ -1,4 +1,5 @@
 import ModernRIBs
+import Combine
 
 protocol FinanceHomeDependency: Dependency {
   // TODO: Declare the set of dependencies required by this RIB, but cannot be
@@ -6,14 +7,15 @@ protocol FinanceHomeDependency: Dependency {
 }
 
 final class FinanceHomeComponent: Component<FinanceHomeDependency>, SuperPayDashBoardDependency {
-    var balance: ReadOnlyCurrentValuePublisher<Double>
+    var balance: ReadOnlyCurrentValuePublisher<Double> { balancePublish }
+    var balancePublish : CurrentValuePublisher<Double>
     
     init(
-        dependency: Dependency,
-        balance: ReadOnlyCurrentValuePublisher<Double>
+        dependency: FinanceHomeDependency,
+        balance: CurrentValuePublisher<Double>
     ) {
-        self.balance = balance
-        super.dependency = dependency
+        self.balancePublish = balance
+        super.init(dependency: dependency)
     }
   
   // TODO: Declare 'fileprivate' dependencies that are only used by this RIB.
@@ -32,7 +34,8 @@ final class FinanceHomeBuilder: Builder<FinanceHomeDependency>, FinanceHomeBuild
   }
   
   func build(withListener listener: FinanceHomeListener) -> FinanceHomeRouting {
-    let component = FinanceHomeComponent(dependency: dependency)
+      let balance = CurrentValuePublisher(0.0)
+    let component = FinanceHomeComponent(dependency: dependency, balance: balance)
     let viewController = FinanceHomeViewController()
     let interactor = FinanceHomeInteractor(presenter: viewController)
     interactor.listener = listener

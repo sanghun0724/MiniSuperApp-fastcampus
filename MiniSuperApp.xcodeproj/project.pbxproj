@@ -12,6 +12,7 @@
 		B6BACBBB297CF6430079254A /* SuperPayDashBoardBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BACBB7297CF6430079254A /* SuperPayDashBoardBuilder.swift */; };
 		B6BACBBC297CF6430079254A /* SuperPayDashBoardInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BACBB8297CF6430079254A /* SuperPayDashBoardInteractor.swift */; };
 		B6BACBBE297D0B0E0079254A /* Combie+Uitils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BACBBD297D0B0E0079254A /* Combie+Uitils.swift */; };
+		B6BACBD2297D53F40079254A /* CombineExt in Frameworks */ = {isa = PBXBuildFile; productRef = B6BACBD1297D53F40079254A /* CombineExt */; };
 		F57EBE542738468700FE9319 /* UIImage+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57EBE512738468700FE9319 /* UIImage+Utils.swift */; };
 		F57EBE552738468700FE9319 /* Array+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57EBE522738468700FE9319 /* Array+Utils.swift */; };
 		F57EBE562738468700FE9319 /* UITableView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57EBE532738468700FE9319 /* UITableView+Utils.swift */; };
@@ -102,6 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6BACBD2297D53F40079254A /* CombineExt in Frameworks */,
 				F5829F6E26DB2DE900BFA8CD /* ModernRIBs in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,6 +274,7 @@
 			name = MiniSuperApp;
 			packageProductDependencies = (
 				F5829F6D26DB2DE900BFA8CD /* ModernRIBs */,
+				B6BACBD1297D53F40079254A /* CombineExt */,
 			);
 			productName = SuperRedApp;
 			productReference = F5829F5526DB2BC400BFA8CD /* MiniSuperApp.app */;
@@ -302,6 +305,7 @@
 			mainGroup = F5829F4C26DB2BC400BFA8CD;
 			packageReferences = (
 				F5829F6C26DB2DE900BFA8CD /* XCRemoteSwiftPackageReference "ModernRIBs" */,
+				B6BACBD0297D53F40079254A /* XCRemoteSwiftPackageReference "CombineExt" */,
 			);
 			productRefGroup = F5829F5626DB2BC400BFA8CD /* Products */;
 			projectDirPath = "";
@@ -561,6 +565,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		B6BACBD0297D53F40079254A /* XCRemoteSwiftPackageReference "CombineExt" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CombineCommunity/CombineExt";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		F5829F6C26DB2DE900BFA8CD /* XCRemoteSwiftPackageReference "ModernRIBs" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/DevYeom/ModernRIBs";
@@ -572,6 +584,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		B6BACBD1297D53F40079254A /* CombineExt */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B6BACBD0297D53F40079254A /* XCRemoteSwiftPackageReference "CombineExt" */;
+			productName = CombineExt;
+		};
 		F5829F6D26DB2DE900BFA8CD /* ModernRIBs */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F5829F6C26DB2DE900BFA8CD /* XCRemoteSwiftPackageReference "ModernRIBs" */;
