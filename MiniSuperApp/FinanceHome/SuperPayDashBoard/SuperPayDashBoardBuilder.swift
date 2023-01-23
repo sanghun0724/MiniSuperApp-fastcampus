@@ -6,6 +6,7 @@
 //
 
 import ModernRIBs
+import Foundation
 
 protocol SuperPayDashBoardDependency: Dependency {
     // TODO: Declare the set of dependencies required by this RIB, but cannot be
@@ -15,7 +16,7 @@ protocol SuperPayDashBoardDependency: Dependency {
 
 final class SuperPayDashBoardComponent: Component<SuperPayDashBoardDependency>, SuperPayDashBoardInteractorDependency {
     var balance: ReadOnlyCurrentValuePublisher<Double> { dependency.balance }
-    
+    var formatter: NumberFormatter { Formatter.balanceFormatter }
 
     // TODO: Declare 'fileprivate' dependencies that are only used by this RIB.
 }
