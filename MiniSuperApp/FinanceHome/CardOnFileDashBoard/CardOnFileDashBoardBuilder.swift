@@ -10,9 +10,12 @@ import ModernRIBs
 protocol CardOnFileDashBoardDependency: Dependency {
     // TODO: Declare the set of dependencies required by this RIB, but cannot be
     // created by this RIB.
+    var cardOnFileRepository: CardOnfileRepository { get }
 }
 
-final class CardOnFileDashBoardComponent: Component<CardOnFileDashBoardDependency> {
+final class CardOnFileDashBoardComponent: Component<CardOnFileDashBoardDependency>, CardOnFileDashBoardInteractorDependency {
+    var cardOnFileRepository: CardOnfileRepository { dependency.cardOnFileRepository }
+    
 
     // TODO: Declare 'fileprivate' dependencies that are only used by this RIB.
 }
@@ -32,7 +35,7 @@ final class CardOnFileDashBoardBuilder: Builder<CardOnFileDashBoardDependency>, 
     func build(withListener listener: CardOnFileDashBoardListener) -> CardOnFileDashBoardRouting {
         let component = CardOnFileDashBoardComponent(dependency: dependency)
         let viewController = CardOnFileDashBoardViewController()
-        let interactor = CardOnFileDashBoardInteractor(presenter: viewController)
+        let interactor = CardOnFileDashBoardInteractor(presenter: viewController, dependency: component)
         interactor.listener = listener
         return CardOnFileDashBoardRouter(interactor: interactor, viewController: viewController)
     }

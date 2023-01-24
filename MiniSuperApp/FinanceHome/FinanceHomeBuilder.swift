@@ -6,14 +6,17 @@ protocol FinanceHomeDependency: Dependency {
 }
 
 final class FinanceHomeComponent: Component<FinanceHomeDependency>, SuperPayDashBoardDependency, CardOnFileDashBoardDependency {
+    var cardOnFileRepository: CardOnfileRepository
     var balance: ReadOnlyCurrentValuePublisher<Double> { balancePublish }
     var balancePublish: CurrentValuePublisher<Double>
     
     init(
         dependency: FinanceHomeDependency,
-        balancePublish: CurrentValuePublisher<Double>
+        balancePublish: CurrentValuePublisher<Double>,
+        cardOnFileRepository: CardOnfileRepository
     ) {
         self.balancePublish = balancePublish
+        self.cardOnFileRepository = cardOnFileRepository
         super.init(dependency: dependency)
     }
 
@@ -36,7 +39,8 @@ final class FinanceHomeBuilder: Builder<FinanceHomeDependency>, FinanceHomeBuild
     let balancePublish = CurrentValuePublisher<Double>(0)
     let component = FinanceHomeComponent(
         dependency: dependency,
-        balancePublish: balancePublish
+        balancePublish: balancePublish,
+        cardOnFileRepository: CardOnfileRepositoryImp()
     )
     let viewController = FinanceHomeViewController()
     let interactor = FinanceHomeInteractor(presenter: viewController)
