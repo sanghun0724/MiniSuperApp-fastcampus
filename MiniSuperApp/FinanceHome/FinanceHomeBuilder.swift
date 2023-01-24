@@ -6,15 +6,19 @@ protocol FinanceHomeDependency: Dependency {
   // created by this RIB.
 }
 
-final class FinanceHomeComponent: Component<FinanceHomeDependency>, SuperPayDashBoardDependency {
+final class FinanceHomeComponent: Component<FinanceHomeDependency>, SuperPayDashBoardDependency, CardOnFileDashBoardDependency, AddPaymentMethodDependency {
+    var cardOnFileRepository: CardOnfileRepository
+    
     var balance: ReadOnlyCurrentValuePublisher<Double> { balancePublish }
     var balancePublish : CurrentValuePublisher<Double>
     
     init(
         dependency: FinanceHomeDependency,
-        balance: CurrentValuePublisher<Double>
+        balance: CurrentValuePublisher<Double>,
+        cardOnFileRepostiory: CardOnfileRepository
     ) {
         self.balancePublish = balance
+        self.cardOnFileRepository = cardOnFileRepostiory
         super.init(dependency: dependency)
     }
   
@@ -35,17 +39,23 @@ final class FinanceHomeBuilder: Builder<FinanceHomeDependency>, FinanceHomeBuild
   
   func build(withListener listener: FinanceHomeListener) -> FinanceHomeRouting {
       let balance = CurrentValuePublisher(0.0)
-    let component = FinanceHomeComponent(dependency: dependency, balance: balance)
+    let component = FinanceHomeComponent(dependency: dependency,
+                                         balance: balance,
+                                         cardOnFileRepostiory: CardOnfileRepositoryImp())
     let viewController = FinanceHomeViewController()
     let interactor = FinanceHomeInteractor(presenter: viewController)
     interactor.listener = listener
     
     let superPayDashBoardBuilder = SuperPayDashBoardBuilder(dependency: component)
+    let cardOnFileDashBoardBuilder = CardOnFileDashBoardBuilder(dependency: component)
+    let addPaymentMethodBuilder = AddPaymentMethodBuilder(dependency: component)
       
     return FinanceHomeRouter(
         interactor: interactor,
         viewController: viewController,
-        superPayDashBoardBuildeable: superPayDashBoardBuilder
+        superPayDashBoardBuildeable: superPayDashBoardBuilder,
+        cardOnFileDashBoardBuildable: cardOnFileDashBoardBuilder,
+        addPaymentMethodBuildable: addPaymentMethodBuilder
     )
   }
 }

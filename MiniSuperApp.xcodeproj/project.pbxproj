@@ -24,6 +24,10 @@
 		DE8D4A6F297FAC15009BE39D /* PaymentMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D4A6E297FAC15009BE39D /* PaymentMethod.swift */; };
 		DE8D4A72297FAD7E009BE39D /* CardOnFileRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D4A71297FAD7E009BE39D /* CardOnFileRepository.swift */; };
 		DE8D4A74297FADF5009BE39D /* AddPayMentMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D4A73297FADF5009BE39D /* AddPayMentMethod.swift */; };
+		DE8D4A7A297FD89A009BE39D /* AddPaymentMethodRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D4A76297FD89A009BE39D /* AddPaymentMethodRouter.swift */; };
+		DE8D4A7B297FD89A009BE39D /* AddPaymentMethodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D4A77297FD89A009BE39D /* AddPaymentMethodViewController.swift */; };
+		DE8D4A7C297FD89A009BE39D /* AddPaymentMethodBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D4A78297FD89A009BE39D /* AddPaymentMethodBuilder.swift */; };
+		DE8D4A7D297FD89A009BE39D /* AddPaymentMethodInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D4A79297FD89A009BE39D /* AddPaymentMethodInteractor.swift */; };
 		F57EBE542738468700FE9319 /* UIImage+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57EBE512738468700FE9319 /* UIImage+Utils.swift */; };
 		F57EBE552738468700FE9319 /* Array+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57EBE522738468700FE9319 /* Array+Utils.swift */; };
 		F57EBE562738468700FE9319 /* UITableView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57EBE532738468700FE9319 /* UITableView+Utils.swift */; };
@@ -80,6 +84,10 @@
 		DE8D4A6E297FAC15009BE39D /* PaymentMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethod.swift; sourceTree = "<group>"; };
 		DE8D4A71297FAD7E009BE39D /* CardOnFileRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardOnFileRepository.swift; sourceTree = "<group>"; };
 		DE8D4A73297FADF5009BE39D /* AddPayMentMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPayMentMethod.swift; sourceTree = "<group>"; };
+		DE8D4A76297FD89A009BE39D /* AddPaymentMethodRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPaymentMethodRouter.swift; sourceTree = "<group>"; };
+		DE8D4A77297FD89A009BE39D /* AddPaymentMethodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPaymentMethodViewController.swift; sourceTree = "<group>"; };
+		DE8D4A78297FD89A009BE39D /* AddPaymentMethodBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPaymentMethodBuilder.swift; sourceTree = "<group>"; };
+		DE8D4A79297FD89A009BE39D /* AddPaymentMethodInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPaymentMethodInteractor.swift; sourceTree = "<group>"; };
 		F57EBE512738468700FE9319 /* UIImage+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Utils.swift"; sourceTree = "<group>"; };
 		F57EBE522738468700FE9319 /* Array+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Utils.swift"; sourceTree = "<group>"; };
 		F57EBE532738468700FE9319 /* UITableView+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Utils.swift"; sourceTree = "<group>"; };
@@ -176,6 +184,17 @@
 			path = Repository;
 			sourceTree = "<group>";
 		};
+		DE8D4A75297FD85A009BE39D /* AddPaymentMethod */ = {
+			isa = PBXGroup;
+			children = (
+				DE8D4A76297FD89A009BE39D /* AddPaymentMethodRouter.swift */,
+				DE8D4A77297FD89A009BE39D /* AddPaymentMethodViewController.swift */,
+				DE8D4A78297FD89A009BE39D /* AddPaymentMethodBuilder.swift */,
+				DE8D4A79297FD89A009BE39D /* AddPaymentMethodInteractor.swift */,
+			);
+			path = AddPaymentMethod;
+			sourceTree = "<group>";
+		};
 		F57F6AD926DB49E500C0117D /* AppHome */ = {
 			isa = PBXGroup;
 			children = (
@@ -192,6 +211,7 @@
 		F57F6ADA26DB49EA00C0117D /* FinanceHome */ = {
 			isa = PBXGroup;
 			children = (
+				DE8D4A75297FD85A009BE39D /* AddPaymentMethod */,
 				DE8D4A70297FAD6E009BE39D /* Repository */,
 				DE8D4A5D297FA6CD009BE39D /* CardOnFileDashBoard */,
 				B6BACBC4297D1DEE0079254A /* SuperPayDashBoard */,
@@ -394,7 +414,9 @@
 				F5EAA229270B3A4500EF2B70 /* TransportHomeViewController.swift in Sources */,
 				F57F6AF226DB4A2D00C0117D /* ProfileHomeBuilder.swift in Sources */,
 				F5EAA22A270B3A4500EF2B70 /* TransportHomeRouter.swift in Sources */,
+				DE8D4A7A297FD89A009BE39D /* AddPaymentMethodRouter.swift in Sources */,
 				F5EAA232270B3A8F00EF2B70 /* UIView+Utils.swift in Sources */,
+				DE8D4A7D297FD89A009BE39D /* AddPaymentMethodInteractor.swift in Sources */,
 				F57F6AEA26DB4A2700C0117D /* FinanceHomeBuilder.swift in Sources */,
 				F5EAA22E270B3A4500EF2B70 /* SuperPayView.swift in Sources */,
 				DE8D4A68297FAA3A009BE39D /* AddPaymentMethodButton.swift in Sources */,
@@ -411,11 +433,13 @@
 				DE8D4A64297FA6E7009BE39D /* CardOnFileDashBoardBuilder.swift in Sources */,
 				F5EAA21D270B395900EF2B70 /* HomeWidgetModel.swift in Sources */,
 				B6BACBCC297D1E030079254A /* SuperPayDashBoardInteractor.swift in Sources */,
+				DE8D4A7B297FD89A009BE39D /* AddPaymentMethodViewController.swift in Sources */,
 				F5EAA21E270B395900EF2B70 /* AppHomeRouter.swift in Sources */,
 				F5EAA21A270B395900EF2B70 /* AppHomeBuilder.swift in Sources */,
 				F5EAA234270B3A9A00EF2B70 /* UIColor+Utils.swift in Sources */,
 				F5EAA22C270B3A4500EF2B70 /* TransportHomeInteractor.swift in Sources */,
 				F5829F7726DB34AA00BFA8CD /* AppRootInteractor.swift in Sources */,
+				DE8D4A7C297FD89A009BE39D /* AddPaymentMethodBuilder.swift in Sources */,
 				DE8D4A6D297FAC00009BE39D /* PaymentMethodViewModel.swift in Sources */,
 				F5EAA22D270B3A4500EF2B70 /* RideTypeView.swift in Sources */,
 				B6BACBCF297D2AAB0079254A /* Formatter.swift in Sources */,

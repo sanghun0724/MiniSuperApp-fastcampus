@@ -2,6 +2,9 @@ import ModernRIBs
 
 protocol FinanceHomeRouting: ViewableRouting {
   func attachSuperPayDashBoard()
+  func attachCardOnFileDashBoard()
+  func attachAddPaymentMethod()
+  func detachAddPaymentMethod()
 }
 
 protocol FinanceHomePresentable: Presentable {
@@ -14,7 +17,7 @@ protocol FinanceHomeListener: AnyObject {
 }
 
 final class FinanceHomeInteractor: PresentableInteractor<FinanceHomePresentable>, FinanceHomeInteractable, FinanceHomePresentableListener {
-  
+    
   weak var router: FinanceHomeRouting?
   weak var listener: FinanceHomeListener?
   
@@ -28,10 +31,16 @@ final class FinanceHomeInteractor: PresentableInteractor<FinanceHomePresentable>
   override func didBecomeActive() {
     super.didBecomeActive()
       router?.attachSuperPayDashBoard()
+      router?.attachCardOnFileDashBoard()
   }
   
   override func willResignActive() {
     super.willResignActive()
+      router?.detachAddPaymentMethod()
     // TODO: Pause any business logic.
+  }
+    
+  func didTapButton() {
+      router?.attachAddPaymentMethod()
   }
 }

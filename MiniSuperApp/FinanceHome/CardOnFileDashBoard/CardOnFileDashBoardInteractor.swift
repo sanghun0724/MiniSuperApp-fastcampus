@@ -22,9 +22,9 @@ protocol CardOnFileDashBoardInteractorDependency {
     var cardOnFileRepository: CardOnfileRepository { get }
 }
 
-
 protocol CardOnFileDashBoardListener: AnyObject {
     // TODO: Declare methods the interactor can invoke to communicate with other RIBs.
+    func didTapButton()
 }
 
 final class CardOnFileDashBoardInteractor: PresentableInteractor<CardOnFileDashBoardPresentable>, CardOnFileDashBoardInteractable, CardOnFileDashBoardPresentableListener {
@@ -61,6 +61,6 @@ final class CardOnFileDashBoardInteractor: PresentableInteractor<CardOnFileDashB
     }
     
     func didTapAddPaymentMethod() {
-        
+        listener?.didTapButton()
     }
 }
